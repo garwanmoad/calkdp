@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profit Distribution Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      
+      h1, h2 {
+        color: #0077C9;
+        margin-top: 30px;
+      }
+      
+      table {
+        margin: 30px 0;
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+      }
+      
+      th, td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      th {
+        background-color: #dddddd;
+      }
+      
+      button {
+        background-color: #0077C9;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 20px;
+      }
+      
+      #mouad_total_profit, #fatima_total_profit {
+        font-weight: bold;
+      }
+      
+      @media only screen and (max-width: 600px) {
+        table {
+          width: 100%;
+          margin: 0 auto;
+        }
+        
+        th, td {
+          font-size: 14px;
+        }
+        
+        h1, h2 {
+          font-size: 24px;
+        }
+        
+        button {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+      
+      @media only screen and (max-width: 600px) {
+        th, td {
+          display: block;
+          width: 100%;
+        }
+        
+        th {
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Profit Distribution Calculator</h1>
+    <h2>Book 1</h2>
+    <table>
+      <tr>
+        <th>Marketplace</th>
+        <th>Profit</th>
+      </tr>
+      <tr>
+        <td>Amazon.com</td>
+        <td><input type="text" id="amazon_com_profit_1" name="amazon_com_profit_1"></td>
+      </tr>
+      <tr>
+        <td>Amazon.co.uk</td>
+        <td><input type="text" id="amazon_co_uk_profit_1" name="amazon_co_uk_profit_1"></td>
+      </tr>
+      <tr>
+        <td>Amazon.de</td>
+        <td><input type="text" id="amazon_de_profit_1" name="amazon_de_profit_1"></td>
+      </tr>
+      <tr>
+        <td>Amazon.ca</td>
+        <td><input type="text" id="amazon_ca_profit_1" name="amazon_ca_profit_1"></td>
+      </tr>
+      <tr>
+        <td>Amazon.com.au</td>
+        <td><input type="text" id="amazon_com_au_profit_1" name="amazon_com_au_profit_1"></td>
+      </tr>
+    </table>
+    <h2>Book 2</h2>
+    <table>
+      <tr>
+        <th>Marketplace</th>
+        <th>Profit</th>
+      </tr>
+      <tr>
+        <td>Amazon.com</td>
+        <td><input type="text" id="amazon_com_profit_2" name="amazon_com_profit_2"></td>
+</tr>
+<tr>
+<td>Amazon.co.uk</td>
+<td><input type="text" id="amazon_co_uk_profit_2" name="amazon_co_uk_profit_2"></td>
+</tr>
+<tr>
+<td>Amazon.de</td>
+<td><input type="text" id="amazon_de_profit_2" name="amazon_de_profit_2"></td>
+</tr>
+<tr>
+<td>Amazon.ca</td>
+<td><input type="text" id="amazon_ca_profit_2" name="amazon_ca_profit_2"></td>
+</tr>
+<tr>
+<td>Amazon.com.au</td>
+<td><input type="text" id="amazon_com_au_profit_2" name="amazon_com_au_profit_2"></td>
+</tr>
+</table>
+<button type="button" onclick="calculateProfit()">Calculate Profit</button>
+<h2>Result</h2>
+<p>Mouad's Total Profit: <span id="mouad_total_profit"></span></p>
+<p>Fatima's Total Profit: <span id="fatima_total_profit"></span></p>
+
+    <script>
+      function calculateProfit() {
+        var amazonComProfit1 = parseFloat(document.querySelector("#amazon_com_profit_1").value);
+        var amazonCoUkProfit1 = parseFloat(document.querySelector("#amazon_co_uk_profit_1").value);
+        var amazonDeProfit1 = parseFloat(document.querySelector("#amazon_de_profit_1").value);
+        var amazonCaProfit1 = parseFloat(document.querySelector("#amazon_ca_profit_1").value);
+        var amazonComAuProfit1 = parseFloat(document.querySelector("#amazon_com_au_profit_1").value);
+        var amazonComProfit2 = parseFloat(document.querySelector("#amazon_com_profit_2").value);
+        var amazonCoUkProfit2 = parseFloat(document.querySelector("#amazon_co_uk_profit_2").value);
+        var amazonDeProfit2 = parseFloat(document.querySelector("#amazon_de_profit_2").value);
+        var amazonCaProfit2 = parseFloat(document.querySelector("#amazon_ca_profit_2").value);
+        var amazonComAuProfit2 = parseFloat(document.querySelector("#amazon_com_au_profit_2").value);
+
+        var mouadProfit1 = (amazonComProfit1 * 0.9 + amazonCoUkProfit1 + amazonDeProfit1 + amazonCaProfit1 + amazonComAuProfit1) * 0.65;
+        var fatimaProfit1 = (amazonComProfit1 * 0.9 + amazonCoUkProfit1 + amazonDeProfit1 + amazonCaProfit1 + amazonComAuProfit1) * 0.35;
+        var mouadProfit2 = (amazonComProfit2 * 0.9 + amazonCoUkProfit2 + amazonDeProfit2 + amazonCaProfit2 + amazonComAuProfit2) * 0.8;
+        var fatimaProfit2 = (amazonComProfit2 * 0.9 + amazonCoUkProfit2 + amazonDeProfit2 + amazonCaProfit2 + amazonComAuProfit2) * 0.2;
+
+        var mouadTotalProfit = mouadProfit1 + mouadProfit2;
+        var fatimaTotalProfit = fatimaProfit1 + fatimaProfit2;
+
+        document.querySelector("#mouad_total_profit").innerHTML = mouadTotalProfit;
+        document.querySelector("#fatima_total_profit").innerHTML = fatimaTotalProfit;
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
