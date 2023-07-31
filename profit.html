@@ -139,31 +139,31 @@
 <p>Mouad's Total Profit: <span id="mouad_total_profit"></span></p>
 <p>Fatima's Total Profit: <span id="fatima_total_profit"></span></p>
 
-    <script>
-      function calculateProfit() {
-        var amazonComProfit1 = parseFloat(document.querySelector("#amazon_com_profit_1").value);
-        var amazonCoUkProfit1 = parseFloat(document.querySelector("#amazon_co_uk_profit_1").value);
-        var amazonDeProfit1 = parseFloat(document.querySelector("#amazon_de_profit_1").value);
-        var amazonCaProfit1 = parseFloat(document.querySelector("#amazon_ca_profit_1").value);
-        var amazonComAuProfit1 = parseFloat(document.querySelector("#amazon_com_au_profit_1").value);
-        var amazonComProfit2 = parseFloat(document.querySelector("#amazon_com_profit_2").value);
-        var amazonCoUkProfit2 = parseFloat(document.querySelector("#amazon_co_uk_profit_2").value);
-        var amazonDeProfit2 = parseFloat(document.querySelector("#amazon_de_profit_2").value);
-        var amazonCaProfit2 = parseFloat(document.querySelector("#amazon_ca_profit_2").value);
-        var amazonComAuProfit2 = parseFloat(document.querySelector("#amazon_com_au_profit_2").value);
+   <script>
+  function calculateProfit() {
+    var amazonComProfit1 = parseFloat(document.querySelector("#amazon_com_profit_1").value);
+    var amazonCoUkProfit1 = parseFloat(document.querySelector("#amazon_co_uk_profit_1").value);
+    var amazonDeProfit1 = parseFloat(document.querySelector("#amazon_de_profit_1").value);
+    var amazonCaProfit1 = parseFloat(document.querySelector("#amazon_ca_profit_1").value);
+    var amazonComAuProfit1 = parseFloat(document.querySelector("#amazon_com_au_profit_1").value);
+    var amazonComProfit2 = parseFloat(document.querySelector("#amazon_com_profit_2").value);
+    var amazonCoUkProfit2 = parseFloat(document.querySelector("#amazon_co_uk_profit_2").value);
+    var amazonDeProfit2 = parseFloat(document.querySelector("#amazon_de_profit_2").value);
+    var amazonCaProfit2 = parseFloat(document.querySelector("#amazon_ca_profit_2").value);
+    var amazonComAuProfit2 = parseFloat(document.querySelector("#amazon_com_au_profit_2").value);
 
-        var mouadProfit1 = (amazonComProfit1 * 0.9 + amazonCoUkProfit1 + amazonDeProfit1 + amazonCaProfit1 + amazonComAuProfit1) * 0.65;
-        var fatimaProfit1 = (amazonComProfit1 * 0.9 + amazonCoUkProfit1 + amazonDeProfit1 + amazonCaProfit1 + amazonComAuProfit1) * 0.35;
-        var mouadProfit2 = (amazonComProfit2 * 0.9 + amazonCoUkProfit2 + amazonDeProfit2 + amazonCaProfit2 + amazonComAuProfit2) * 0.8;
-        var fatimaProfit2 = (amazonComProfit2 * 0.9 + amazonCoUkProfit2 + amazonDeProfit2 + amazonCaProfit2 + amazonComAuProfit2) * 0.2;
+    var mouadProfit1 = (amazonComProfit1 * 0.9 + amazonCoUkProfit1 + amazonDeProfit1 + amazonCaProfit1 * 0.9 + amazonComAuProfit1) * 0.65;
+    var fatimaProfit1 = (amazonComProfit1 * 0.9 + amazonCoUkProfit1 + amazonDeProfit1 + amazonCaProfit1 * 0.9 + amazonComAuProfit1) * 0.35;
+    var mouadProfit2 = (amazonComProfit2 * 0.9 + amazonCoUkProfit2 + amazonDeProfit2 + amazonCaProfit2 * 0.9 + amazonComAuProfit2) * 0.8;
+    var fatimaProfit2 = (amazonComProfit2 * 0.9 + amazonCoUkProfit2 + amazonDeProfit2 + amazonCaProfit2 * 0.9 + amazonComAuProfit2) * 0.2;
 
-        var mouadTotalProfit = mouadProfit1 + mouadProfit2;
-        var fatimaTotalProfit = fatimaProfit1 + fatimaProfit2;
+    var mouadTotalProfit = mouadProfit1 + mouadProfit2;
+    var fatimaTotalProfit = fatimaProfit1 + fatimaProfit2;
 
-        document.querySelector("#mouad_total_profit").innerHTML = mouadTotalProfit;
-        document.querySelector("#fatima_total_profit").innerHTML = fatimaTotalProfit;
-      }
-    </script>
+    document.querySelector("#mouad_total_profit").innerHTML = mouadTotalProfit;
+    document.querySelector("#fatima_total_profit").innerHTML = fatimaTotalProfit;
+  }
+</script>
   </body>
 </html>
 
